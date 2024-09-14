@@ -1,0 +1,93 @@
+body {
+  background-color: #e1e4dd; /* Light grayish-blue background */
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Base font size */
+}
+
+.help-content {
+  font-family: Arial, sans-serif;
+  max-width: 90%; /* Responsive width to adapt to different zoom levels */
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  background-color: white; /* White background for the help section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+h2 {
+  font-family: "Times New Roman", Times, serif; /* Change heading font to Times New Roman */
+  font-size: 2.5rem; /* Use relative units for better scaling */
+  color: #1e90ff; /* Standard blue color for help */
+  margin-bottom: 3rem; /* Increased space between heading and buttons */
+}
+
+.help-columns {
+  display: flex;
+  justify-content: space-between; /* Adjust spacing to fit content */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.help-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 100px; /* Minimum width to ensure proper layout */
+}
+
+.help-button {
+  background-color: #4CAF50; /* Standard help color */
+  color: white;
+  width: 300px; /* Fixed width for buttons */
+  height: 70px; /* Fixed height for buttons */
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem; /* Use relative units for font size */
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 3rem; /* Increase vertical spacing between buttons */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  line-height: 60px; /* Center text vertically */
+}
+
+.help-button:hover {
+  background-color: #17e8f7; /* Slightly darker on hover */
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #f44336; /* Red color for back button */
+  color: white;
+  padding: 0.75rem 1.5rem; /* Use relative units for padding */
+  font-size: 1rem; /* Use relative units for font size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+@media screen and (max-width: 100px) {
+  .help-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .help-column {
+    margin-bottom: 80px;
+  }
+
+  .help-button {
+    width: 100%;
+    height: auto; /* Allow height to adjust based on content */
+  }
+}

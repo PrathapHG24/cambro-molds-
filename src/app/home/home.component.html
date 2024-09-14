@@ -1,0 +1,79 @@
+<div class="header">
+  <!-- Help section will be moved out from the header to be aligned on the top-left -->
+  <div class="help-section">
+    <!-- Help buttons -->
+     <!-- Help Button -->
+    <button class="help-button" (click)="navigateToHelp()">RoboHelp</button>
+    <button class="help-button" (click)="openPDF()">BatchHelp</button>
+    <!-- Help icon -->
+  </div>
+
+  <!-- Cambro logo in the center -->
+  <img
+    src="../assets/Image/WhatsApp Image 2024-04-27 at 2.29.52 AM.jpeg"
+    alt="Cambro Logo"
+    class="logo"
+  />
+</div>
+
+<div class="status-indicator-container">
+  <div class="status-indicator">
+    <span [class]="isReachable ? 'light-on' : 'light-off'"></span>
+    <p>{{ isReachable ? 'PLC connection is active' : 'PLC connection is not active' }}</p>
+  </div>
+
+  <div class="status-indicator">
+    <span [class]="isWifiReachable ? 'light-on' : 'light-off'"></span>
+    <p>{{ isWifiReachable ? 'Internet connection is active' : 'Internet connection is not active' }}</p>
+  </div>
+</div>
+
+<div class="button-container">
+  <!-- First row -->
+  <div class="button-row">
+    <button (click)="openApplication('https://cambromachine:4201/#/login', batch1)">
+      W701
+      <span class="batch-status">
+        {{
+          batch1.isBatchRunning ? "Batch is running" : "Batch is not running"
+        }}
+        <br />
+        {{ batch1.scheduleId || "" }}
+      </span>
+    </button>
+    <button (click)="openApplication('https://cambromachine:4202/#/login', batch2)">
+      W702
+      <span class="batch-status">
+        {{
+          batch2.isBatchRunning ? "Batch is running" : "Batch is not running"
+        }}
+        <br />
+        {{ batch2.scheduleId || "" }}
+      </span>
+    </button>
+  </div>
+
+  <!-- Second row -->
+  <div class="button-row">
+    <button (click)="openApplication('https://cambromachine:4203/#/login', batch3)">
+      W703
+      <span class="batch-status">
+        {{
+          batch3.isBatchRunning ? "Batch is running" : "Batch is not running"
+        }}
+        <br />
+        {{ batch3.scheduleId || "" }}
+      </span>
+    </button>
+    <button (click)="openApplication('https://cambromachine:4204/#/login', batch4)">
+      W704
+      <span class="batch-status">
+        {{
+          batch4.isBatchRunning ? "Batch is running" : "Batch is not running"
+        }}
+        <br />
+        {{ batch4.scheduleId || "" }}
+      </span>
+    </button>
+  </div>
+</div>
