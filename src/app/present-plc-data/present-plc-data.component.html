@@ -1,0 +1,35 @@
+<div class="plc-data-container">
+    <!-- Home Button -->
+    <button class="home-button" (click)="navigateToHome()">Home</button>
+  
+    <!-- Machine Buttons -->
+    <div class="button-row">
+      <button 
+        *ngFor="let machine of ['M1', 'M2', 'M3', 'M4']"
+        [class.active]="activeButton === machine"
+        (click)="fetchPlcData(machine)">
+        {{ machine }}
+      </button>
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Data Table -->
+    <table *ngIf="plcData && !errorMessage">
+      <thead>
+        <tr>
+          <th>PLC_TAGS</th>
+          <th>Values</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let key of objectKeys(plcData)">
+          <td>{{ key }}</td>
+          <td>{{ plcData[key] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

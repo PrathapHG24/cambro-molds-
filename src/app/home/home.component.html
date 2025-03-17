@@ -4,9 +4,11 @@
     <!-- Help buttons -->
      <!-- Help Button -->
     <button class="help-button" (click)="navigateToHelp()">RoboHelp</button>
-    <button class="help-button" (click)="openPDF()">BatchHelp</button>
-    <!-- Help icon -->
-  </div>
+    <button class="help-button" (click)="openPDF()">BatchHelp</button>      
+  </div> 
+
+   <!-- Present PLC Data Button -->
+   <button class="present-plc-data-button" (click)="navigateToPresentPlcData()">Present_PLC_Data</button>
 
   <!-- Cambro logo in the center -->
   <img
@@ -25,6 +27,10 @@
   <div class="status-indicator">
     <span [class]="isWifiReachable ? 'light-on' : 'light-off'"></span>
     <p>{{ isWifiReachable ? 'Internet connection is active' : 'Internet connection is not active' }}</p>
+  </div>
+  <div class="status-indicator">
+    <span [class]="isReachable ? 'light-on' : 'light-off'"></span>
+    <p>{{ isReachable ? 'Cambro Server is active' : 'Cambro Server is not active' }}</p>
   </div>
 </div>
 
